@@ -1,0 +1,128 @@
+﻿@model IEnumerable<WebBanDongHo.Model.Account>
+
+@{
+    ViewData["Title"] = "Danh sách tài khoản quản trị";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+ <div class="product-status mg-b-30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="product-status-wrap">
+                            <h4>Account List</h4>
+                             <div class="row m-b-30">
+                                   <div class="row m-b-30">
+            <div class="col-lg-12">
+                <div class="d-md-flex">
+                    <div class="m-b-10 m-r-15">
+                        <select class="custom-select" id="idrole" name="idrole" style="min-width: 216px;min-height: 34px;" asp-items="ViewBag.QuyenTruyCap">
+                            <option value="0" disabled selected>Chọn quyền truy cập</option>
+                        </select>
+                  
+                        <select class="custom-select" id="idstatus" name="idstatus" style="min-width: 216px;min-height: 34px;" asp-items="ViewBag.lsTrangThai">
+                            <option value="" disabled selected>Chọn trạng thái</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>                  
+
+                              </div>
+                            <div class="add-product">
+                                <a asp-area="Admin" asp-controller="AdminAccounts" asp-action="Create">Add Account</a>
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                <th>
+                                    @Html.DisplayNameFor(model => model.AccountId)
+            </th>
+            <th>
+                    Phone
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ative)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastLogin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreateDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th>
+                Setting
+            </th>
+        </tr>
+                                 </thead>
+                                 <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                                 <tr>
+                                                         <td>
+                                        @Html.DisplayFor(modelItem => item.AccountId)
+                    </td>
+                                                        <td>
+                                        @item.Phone
+                </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.Salt)
+                </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.Ative)
+                </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.FullName)
+                </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.LastLogin)
+                </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.Role.RoleId)
+                </td>
+                                                     <td >
+                                                         <a style="padding:5px" data-toggle="tooltip" title="Detail" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Details" asp-route-id="@item.AccountId"><i class="fa-solid fa-eye" ></i></a>
+                                                                 <a style="padding:5px" data-toggle="tooltip" title="Edit" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Edit" asp-route-id="@item.AccountId"><i class="fa-solid fa-pen-to-square"></i> </a>                                                                                                     
+                                                                 <a style="padding:5px" data-toggle="tooltip" title="Delete" class="pd-setting-ed" asp-area="Admin" asp-controller="AdminAccounts" asp-action="Delete" asp-route-id="@item.AccountId"><i class="fa fa-trash-o" ></i></a>
+
+                                                     </td>
+
+                                                  </tr>
+
+                            }
+                                  <tbody>
+
+
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

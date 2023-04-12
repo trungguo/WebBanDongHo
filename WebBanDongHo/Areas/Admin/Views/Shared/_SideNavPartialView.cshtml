@@ -1,0 +1,100 @@
+﻿ <nav id="sidebar" class="">
+            <div class="sidebar-header">
+                <a href="index.html"><img class="main-logo" src="~/img/logo/a.png" alt="" /></a>
+                <strong><img src="~/img/logo/a.png" alt="" /></strong>
+            </div>
+            <div class="nalika-profile">
+                <div class="profile-dtl">
+                    <a href="#"><img src="~/img/notification/4.jpg" alt="" /></a>
+                    <h2>Lakian <span class="min-dtn">Das</span></h2>
+                </div>
+                <div class="profile-social-dtl">
+                    <ul class="dtl-social">
+                        <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-google"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                       <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa-sharp fa-solid fa-warehouse"></i>   <span class="mini-click-non">Quản lý đơn hàng</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a asp-area="Admin" asp-controller="AdminOrders" asp-action="Index"><span class="mini-sub-pro">Đơn Hàng</span></a></li>
+                                @*<li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">File Manager</span></a></li>
+                                <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Mail</span></a></li>
+                                <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Projects</span></a></li>
+                                <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">E-commerce</span></a></li>*@
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa-solid fa-atom"></i> <span class="mini-click-non">Quản lý sản phẩm</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a asp-area="Admin" asp-controller="AdminProducts" asp-action="index"><span class="mini-sub-pro">Sản Phẩm</span></a></li>
+                 @*               <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">Alert</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Badge</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Buttoms</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Cards</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Icons</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">lists</span></a></li>
+                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Typography</span></a></li>*@
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa-regular fa-gem"></i> <span class="mini-click-non">Quản Lý khách hàng</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a asp-area="Admin" asp-controller="AdminCustomers" asp-action="index"><span class="mini-sub-pro">Danh sách khách hàng</span></a></li>
+                                <li><a title="Data Maps" href="data-maps.html"><span class="mini-sub-pro">Tìm kiếm khác hàng</span></a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa-solid fa-scale-balanced"></i>      <span class="mini-click-non">Doanh số</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">Form Elements</span></a></li>
+                                <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Form Layouts</span></a></li>
+                                <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Form Validation</span></a></li>                                                            
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa-solid fa-universal-access"></i> <span class="mini-click-non">Quản lý hệ thống</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a asp-area="Admin" asp-controller="AdminAccounts" asp-action="Index">Quản lý quyền tài khoản</a></li>
+                               
+                                <li><a asp-area="Admin" asp-controller="AdminRoles" asp-action="Index">Quản lý quyền truy cập</a></li>
+                                                                                                                         
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa-regular fa-file-lines"></i> <span class="mini-click-non">Quản lý tin tức</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a asp-area="Admin" asp-controller="AdminNews" asp-action="index"><span class="mini-sub-pro">Quản Lý Tin Tức</span></a></li>
+                           
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa-solid fa-window-restore"></i>    <span class="mini-click-non">Quản lý Pages</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a asp-area="Admin" asp-controller="AdminPages" asp-action="index"><span class="mini-sub-pro">Danh sách Page</span></a></li>
+                              
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="fa-solid fa-truck-fast"></i> <span class="mini-click-non">Quản lý Shipper</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
+                                <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
+                                <li><a title="Modals" href="modals.html"><span class="mini-sub-pro">Modals</span></a></li>
+                                <li><a title="Buttons" href="buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
+                                <li><a title="Tabs" href="tabs.html"><span class="mini-sub-pro">Tabs</span></a></li>
+                                <li><a title="Accordion" href="accordion.html"><span class="mini-sub-pro">Accordion</span></a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </nav>

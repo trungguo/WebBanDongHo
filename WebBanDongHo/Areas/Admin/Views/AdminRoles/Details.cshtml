@@ -1,0 +1,39 @@
+﻿@model WebBanDongHo.Model.Role
+
+@{
+    ViewData["Title"] = "Role Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h1 style="color:beige">DETAILS</h1>
+<table class="rwd-table">
+  <tr>
+    <td>ID:</td>
+    <td>@Model.RoleId</td>        
+  </tr><tr>
+    <td>Name:</td>
+    <td>@Model.RoleName</td>        
+  </tr><tr>
+    <td>Description:</td>
+    <td>@Model.Description</td>        
+  </tr>
+   <div>
+    <a asp-action="Edit" asp-route-id="@Model.RoleId">Edit</a> 
+    <a asp-action="Index">Back to List</a>
+</div>
+
+</table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

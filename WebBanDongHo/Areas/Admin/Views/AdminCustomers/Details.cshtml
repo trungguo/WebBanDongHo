@@ -1,0 +1,116 @@
+﻿@model WebBanDongHo.Model.Customer
+
+@{
+    ViewData["Title"] = "Role Detail";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="product-status mg-b-30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="product-status-wrap">
+                    <h1 style="color:beige">DETAILS</h1>
+ <div>
+    <h4>Customer</h4>
+    <hr />
+    <dl style="color:azure" class="dl-horizontal">
+        <dt>
+                                @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Birthday)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Birthday)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Avatar)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Avatar)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Phone)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.LocationId)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.LocationId)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.District)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.District)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Ward)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Ward)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Salt)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Salt)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.LastLogin)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.LastLogin)
+        </dd>
+        <dt>
+                                @Html.DisplayNameFor(model => model.Ative)
+        </dt>
+        <dd>
+                                @Html.DisplayFor(model => model.Ative)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CustomerId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,48 @@
+﻿@using WebBanDongHo.Model;
+@model List<Product>
+@if (Model != null)
+{
+    @foreach (var item in Model)
+    {
+                                            <tr>
+                                                <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+                                                </td>
+                                                <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+                                                </td>                              
+                                                <td>
+                @item.Price.Value.ToString("#,##0") VND
+                                                </td>
+
+
+
+
+                                                <td>
+                @Html.DisplayFor(modelItem => item.Cate.CatName)
+                                                </td>
+                                                <td>
+                @Html.DisplayFor(modelItem => item.Tags)
+                                                </td>
+
+
+                                                <td>
+                @if (item.UnitslnStock.Value > 0)
+                {
+                                                            <div>in stock</div>
+                }
+                else
+                {
+                                                            <div>in stock</div>
+                }
+                                                </td>
+
+                                                <td >
+                                                    <a style="padding:5px" data-toggle="tooltip" title="Detail" asp-area="Admin" asp-controller="AdminProducts" asp-action="Details" asp-route-id="@item.ProductId"><i class="fa-solid fa-eye" ></i></a>
+                                                    <a style="padding:5px" data-toggle="tooltip" title="Edit" asp-area="Admin" asp-controller="AdminProducts" asp-action="Edit" asp-route-id="@item.ProductId"><i class="fa-solid fa-pen-to-square"></i> </a>                                                                                                     
+                                                    <a style="padding:5px" data-toggle="tooltip" title="Delete" class="pd-setting-ed" asp-area="Admin" asp-controller="AdminProducts" asp-action="Delete" asp-route-id="@item.ProductId"><i class="fa fa-trash-o" ></i></a>
+
+                                                </td>
+                                            </tr>
+    }
+}

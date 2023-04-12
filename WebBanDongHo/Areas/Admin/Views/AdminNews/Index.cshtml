@@ -1,0 +1,107 @@
+﻿@using PagedList.Core.Mvc
+
+@model PagedList.Core.IPagedList<WebBanDongHo.Model.News>
+
+
+@{
+
+    ViewData["Title"] = "Danh sách Pages";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+ <div class="product-status mg-b-30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="product-status-wrap">
+                            <h4>Account List</h4>
+                             <div class="row m-b-30">
+                                   <div class="row m-b-30">
+            <div class="col-lg-12">
+                <div class="d-md-flex">
+                    <div class="m-b-10 m-r-15">
+                        <select class="custom-select" id="idrole" name="idrole" style="min-width: 216px;min-height: 34px;" asp-items="ViewBag.QuyenTruyCap">
+                            <option value="0" disabled selected>Chọn quyền truy cập</option>
+                        </select>
+
+                        <select class="custom-select" id="idstatus" name="idstatus" style="min-width: 216px;min-height: 34px;" asp-items="ViewBag.lsTrangThai">
+                            <option value="" disabled selected>Chọn trạng thái</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </div>                  
+
+                              </div>
+                            <div class="add-product">
+                                <a asp-area="Admin" asp-controller="AdminNews" asp-action="Create">Add Account</a>
+                            </div>
+                            <table class="table">
+     <thead>
+        <tr>
+            <th>
+                               ID
+            </th>
+            <th>
+                                  Tiêu Đề
+            </th>
+            <th>
+                                  Trạng thái
+            </th>
+            <th>
+                     Setting
+            </th>
+       
+        </tr>
+    </thead>
+    <tbody>
+                            @foreach (var item in Model)
+                            {
+            <tr>
+                    <td>
+                                        @Html.DisplayFor(modelItem => item.PostId)
+                    </td>
+                <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                    <td>
+                                        @if (item.Published== true)
+                                        {
+
+
+                            <div class="d-flex align-items-center">
+                                <div class="badge badge-success badge-dot m-r-10"></div>
+                                <div>Public</div>
+                            </div>
+                                        }
+                                        else
+                                        {
+                            <div class="d-flex align-items-center">
+                                <div class="badge badge-success badge-dot m-r-10"></div>
+                                <div>Non-Public</div>
+                            </div>
+                                        }
+                                    </td>
+
+                    <td >
+                                                                         <a style="padding:5px" data-toggle="tooltip" title="Detail" asp-area="Admin" asp-controller="AdminNews" asp-action="Details" asp-route-id="@item.PostId"><i class="fa-solid fa-eye" ></i></a>
+                                                                                                     <a style="padding:5px" data-toggle="tooltip" title="Edit" asp-area="Admin" asp-controller="AdminNews" asp-action="Edit" asp-route-id="@item.PostId"><i class="fa-solid fa-pen-to-square"></i> </a>                                                                                                     
+                                                                                                         <a style="padding:5px" data-toggle="tooltip" title="Delete" class="pd-setting-ed" asp-area="Admin" asp-controller="AdminNews" asp-action="Delete" asp-route-id="@item.PostId"><i class="fa fa-trash-o" ></i></a>
+
+                                                                 </td>
+            </tr>
+                            }
+    </tbody>
+</table>
+                            <div class="custom-pagination">
+                                <ul class="pagination">
+                                    <pager class="pager-container" list="@Model" asp-area="Admin" asp-controller="AdminCustomers" asp-action="Index"/>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>

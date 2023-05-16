@@ -31,12 +31,18 @@
                 <div class="col-lg-3 order-lg-1 order-2 pt-10 pt-lg-0">
                     <div class="sidebar-area">
                         <div class="widgets-searchbox mb-9">
-                            <form id="widgets-searchbox" action="#">
+                           @* <form id="widgets-searchbox" action="#">
                                 <input class="input-field" type="text" placeholder="Search">
                                 <button class="widgets-searchbox-btn" type="submit">
                                     <i class="pe-7s-search"></i>
                                 </button>
-                            </form>
+                                 <button type="button" style="magin-left:20px"  onclick="startDictation()"><i class="fa-solid fa-microphone"></i></button>
+                            </form>*@
+                            <form id="searchForm">
+    <input type="text" id="searchTerm" name="searchTerm">
+    <button type="submit">Tìm kiếm</button>
+   <button type="button"   onclick="startDictation()"><i class="fa-solid fa-microphone"></i></button>
+</form>
                         </div>
                         <div class="widgets-area mb-9">
                             <h2 class="widgets-title mb-5">Refine By</h2>
@@ -386,3 +392,20 @@
     </div>
 </main>
 <!-- Main Content Area End Here -->
+@section Scripts {
+        <script>
+            var recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            function startDictation() {
+                recognition.start();
+            }
+
+            recognition.onresult = function(event) {
+                var text = event.results[0][0].transcript;
+                $('#searchTerm').val(text);
+                $('#searchForm').submit();
+            };
+        </script>
+}

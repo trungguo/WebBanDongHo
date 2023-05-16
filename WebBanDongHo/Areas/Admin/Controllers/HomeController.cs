@@ -3,7 +3,7 @@
 namespace WebBanDongHo.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Route("index.html",Name="Index")]
+    [Route("Admin",Name="Index")]
     
     public class HomeController : Controller
     {

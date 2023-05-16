@@ -184,7 +184,7 @@ namespace WebShop.Controllers
                     if (khachhang.Ative == false)
                     {
                         return RedirectToAction("ThongBao", "Accounts");
-                    }
+                    }   
 
                     //Luu Session MaKh
                     HttpContext.Session.SetString("CustomerId", khachhang.CustomerId.ToString());

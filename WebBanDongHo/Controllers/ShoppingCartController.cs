@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AspNetCoreHero.ToastNotification.Abstractions;
-using Microsoft.AspNetCore.Http;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using Microsoft.AspNetCore.Mvc;
 using WebBanDongHo.Extension;
 using WebBanDongHo.Model;
@@ -11,7 +6,7 @@ using WebBanDongHo.ModelViews;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace WebShop.Controllers
+namespace WebBanDongHo.Controllers
 {
     public class ShoppingCartController : Controller
     {
@@ -22,12 +17,12 @@ namespace WebShop.Controllers
             _context = context;
             _notyfService = notyfService;
         }
-       public List<CartItem> GioHang
+        public List<CartItem> GioHang
         {
             get
             {
                 var gh = HttpContext.Session.Get<List<CartItem>>("GioHang");
-                if (gh==default(List<CartItem>))
+                if (gh == default(List<CartItem>))
                 {
                     gh = new List<CartItem>();
                 }
@@ -64,7 +59,7 @@ namespace WebShop.Controllers
 
                 //Luu lai Session
                 HttpContext.Session.Set<List<CartItem>>("GioHang", cart);
-                _notyfService.Success("Đăng nhập thành công");
+                _notyfService.Success("Thêm sản phẩm thành công");
                 return Json(new { success = true });
             }
             catch
@@ -74,7 +69,7 @@ namespace WebShop.Controllers
         }
         [HttpPost]
         [Route("api/cart/update")]
-        public IActionResult UpdateCart(int productID,int? amount)
+        public IActionResult UpdateCart(int productID, int? amount)
         {
             //Lay gio hang ra de xu ly
             var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
@@ -102,7 +97,7 @@ namespace WebShop.Controllers
         [Route("api/cart/remove")]
         public ActionResult Remove(int productID)
         {
-            
+
             try
             {
                 List<CartItem> gioHang = GioHang;
@@ -115,12 +110,12 @@ namespace WebShop.Controllers
                 HttpContext.Session.Set<List<CartItem>>("GioHang", gioHang);
                 return Json(new { success = true });
             }
-            catch 
+            catch
             {
                 return Json(new { success = false });
             }
         }
-        [Route("cart.html",Name ="Cart")]
+        [Route("cart.html", Name = "Cart")]
         public IActionResult Index()
         {
             return View(GioHang);

@@ -15,7 +15,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="product-status-wrap">
                         <h4>Account List</h4>
-                         <div class="col-lg-40">
+                         <div class="col-lg-20">
                                 <div class="d-md-flex">
                                     <div class="m-b-10 m-r-15">
                                         <select class="custom-select" id="txtCatID" name="txtCatID"
@@ -23,17 +23,15 @@
                                             <option selected>Chọn danh mục</option>
                                             <option value="0">Chọn tất cả</option>
                                         </select>
-
-
                                     </div>
                                 </div>
 
                             </div>
 
-                        <div class="row m-b-50">
+                        <div style="margin:10px 0 0 0; " class="row m-b-50">
                             <div class="input-affix m-v-10">
-                              <i class="fa-solid fa-magnifying-glass"></i>
-                                <input id="keyword" name="keyword" type="text" class="form-control" 
+                            
+                                <input  id="keyword" name="keyword" type="text" class="form-control" 
                                     placeholder="Tìm kiếm sản phẩm">
                                  
                             </div>
@@ -149,51 +147,51 @@
         </div>
     </div>
 @section Scripts{
-        <script>
-            $(document).ready(function () {
-                jQuery("#txtCatID").change(function () {
-                    var catID = jQuery(this).children(":selected").attr("value");
-                    catID = parseFloat(catID);
-                    $('#txtCatID option')
-                        .removeAttr('selected');
-                    $("#txtCatID > [value=" + catID + "]").attr("selected", "true");
-                    $.ajax({
-                        url: '/Admin/AdminProducts/Filtter',
-                        datatype: "json",
-                        type: "GET",
-                        data: {
-                            CatID: catID
-                        },
-                        async: true,
-                        success: function (results) {
-                            if (results.status == "success") {
-                                window.location.href = results.redirectUrl;
-                            }
-                        },
-                        error: function (xhr) {
-                            alert('error');
+    <script>
+        $(document).ready(function () {
+            jQuery("#txtCatID").change(function () {
+                var catID = jQuery(this).children(":selected").attr("value");
+                catID = parseFloat(catID);
+                $('#txtCatID option')
+                    .removeAttr('selected');
+                $("#txtCatID > [value=" + catID + "]").attr("selected", "true");
+                $.ajax({
+                    url: '/Admin/AdminProducts/Filtter',
+                    datatype: "json",
+                    type: "GET",
+                    data: {
+                        CatID: catID
+                    },
+                    async: true,
+                    success: function (results) {
+                        if (results.status == "success") {
+                            window.location.href = results.redirectUrl;
                         }
-                    });
-                });
-
-                $("#keyword").keyup(function () {
-                    var strkeyword = $('#keyword').val();
-                    $.ajax({
-                        url: '/Admin/Search/FindProduct/',
-                        datatype: "json",
-                        type: "POST",
-                        data: { keyword: strkeyword },
-                        async: true,
-                        success: function (results) {
-                            $("#records_table").html("");
-                            $("#records_table").html(results);
-                        },
-                        error: function (xhr) {
-                            alert('error');
-                        }
-                    });
+                    },
+                    error: function (xhr) {
+                        alert('error');
+                    }
                 });
             });
-        </script>
 
-    }
+            $("#keyword").keyup(function () {
+                var strkeyword = $('#keyword').val();
+                $.ajax({
+                    url: '/Admin/Search/FindProduct/',
+                    datatype: "json",
+                    type: "POST",
+                    data: { keyword: strkeyword },
+                    async: true,
+                    success: function (results) {
+                        $("#records_table").html("");
+                        $("#records_table").html(results);
+                    },
+                    //error: function (xhr) {
+                    //    alert('error');
+                    //}
+                });
+            });
+        });
+    </script>
+
+}

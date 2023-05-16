@@ -9,7 +9,7 @@ using WebBanDongHo.Model;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace WebShop.Areas.Admin.Controllerst
+namespace WebBanDongHo.Areas.Admin.Controllerst
 {
     [Area("Admin")]
     public class SearchController : Controller

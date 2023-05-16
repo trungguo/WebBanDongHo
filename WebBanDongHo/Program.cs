@@ -26,8 +26,9 @@ internal class Program
                     p.Cookie.Name = "UserLoginCookie";
                     p.ExpireTimeSpan = TimeSpan.FromDays(1);
                     //p.LoginPath = "/dang-nhap.html";
-                    //p.LogoutPath = "/dang-xuat/html";
-                    p.AccessDeniedPath = "/not-found.html";
+                    //p.LogoutPath = "/logout.html";
+                    p.AccessDeniedPath = "/login.html";
+                    p.LoginPath = "/login.html";
                 });
 
 
